@@ -1,0 +1,32 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="700" d:DesignHeight="450"
+             x:Class="CimdoAdmin.AutorizationPage">
+    <Grid Background="#99BDB0" ColumnDefinitions="*,2*,10,2*,*" RowDefinitions="*,*,*,*,*,*,*,*,*,*" >
+       
+        <TextBlock Foreground="#69516B" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3" Text="Autorization" HorizontalAlignment="Center" FontSize="35"/>
+        
+        <TextBlock Foreground="#69516B" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="3" Text="Login" HorizontalAlignment="Left" 
+                   VerticalAlignment="Center" FontSize="25"/>
+        
+        <TextBox Background="#E7F2E8" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="3" 
+                 x:Name="LogInBox" HorizontalContentAlignment="Center"
+                 Foreground="#A09198" FontSize="20" VerticalContentAlignment="Center"/>
+        
+        <TextBlock Foreground="#69516B" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="3" Text="Password" HorizontalAlignment="Left" 
+                   VerticalAlignment="Center" FontSize="25"/>
+        
+        <TextBox Background="#E7F2E8" PasswordChar="*" Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="3" 
+                 x:Name="PasswordBox" HorizontalContentAlignment="Center"
+                 Foreground="#A09198" FontSize="20" VerticalContentAlignment="Center"/>
+        
+        <Button Grid.Row="7" Grid.Column="1" Name="LogIn" Click="LogIn_OnClick" HorizontalContentAlignment="Center" 
+                Content="LogIn" FontSize="20" HorizontalAlignment="Stretch" VerticalAlignment="Center"
+                Background="#A09198" Foreground="#69516B"/>
+        <Button Grid.Row="7" Grid.Column="3" Name="Exit" Click="Exit_OnClick" Content="Exit" HorizontalAlignment="Stretch" FontSize="20"
+                HorizontalContentAlignment="Center" 
+                Background="#A09198" Foreground="#69516B"/>
+    </Grid>
+</UserControl>

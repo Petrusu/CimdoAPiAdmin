@@ -1,0 +1,7 @@
+/home/sofya/Рабочий стол/курсач/Cimdo2.0/Cimdo2Api/obj/Debug/net7.0/Cimdo2Api.csproj.AssemblyReference.cache
+/home/sofya/Рабочий стол/курсач/Cimdo2.0/Cimdo2Api/obj/Debug/net7.0/Cimdo2Api.GeneratedMSBuildEditorConfig.editorconfig
+/home/sofya/Рабочий стол/курсач/Cimdo2.0/Cimdo2Api/obj/Debug/net7.0/Cimdo2Api.AssemblyInfoInputs.cache
+/home/sofya/Рабочий стол/курсач/Cimdo2.0/Cimdo2Api/obj/Debug/net7.0/Cimdo2Api.AssemblyInfo.cs
+/home/sofya/Рабочий стол/курсач/Cimdo2.0/Cimdo2Api/obj/Debug/net7.0/Cimdo2Api.csproj.CoreCompileInputs.cache
+/home/sofya/Рабочий стол/курсач/Cimdo2.0/Cimdo2Api/obj/Debug/net7.0/Cimdo2Api.MvcApplicationPartsAssemblyInfo.cs
+/home/sofya/Рабочий стол/курсач/Cimdo2.0/Cimdo2Api/obj/Debug/net7.0/Cimdo2Api.MvcApplicationPartsAssemblyInfo.cache

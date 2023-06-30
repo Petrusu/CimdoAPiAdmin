@@ -1,0 +1,82 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:cimdoAdmin="clr-namespace:CimdoAdmin"
+             xmlns:model="clr-namespace:CimdoAdmin.Model"
+             mc:Ignorable="d" d:DesignWidth="700" d:DesignHeight="450"
+             x:Class="CimdoAdmin.Window_or_Page.MainPage">
+    <UserControl.Resources>
+        <model:BooksCollection x:Key="Books"  /> 
+        <model:UsersCollection x:Key="Users"  /> 
+    </UserControl.Resources>
+    
+    <Grid Background="#99BDB0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            
+        </Grid.RowDefinitions>
+        
+        <ListBox x:Name="BookListBox" Grid.Row="1" Grid.Column="0" Grid.RowSpan="3" Grid.ColumnSpan="2" Background="#99BDB0" Foreground="#69516B" FontSize="14" 
+                 Items="{Binding Source={StaticResource Books}}">
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <UniformGrid Columns="3"/>
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderBrush="#69516B" BorderThickness="1" Margin="5" Padding="5">
+                        <StackPanel>
+                            <TextBlock Text="{Binding IdBook}" FontWeight="Bold" FontSize="16"/>
+                            <TextBlock Text="{Binding Title}" FontWeight="Bold" FontSize="14"/>
+                            <TextBlock Text="{Binding Author}" FontSize="12" FontStyle="Italic"/>
+                            <TextBlock Text="{Binding Description}" TextWrapping="Wrap" FontSize="12"/>
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <ListBox x:Name="UserListBox" Grid.RowSpan="3" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Background="#99BDB0" Foreground="#69516B" FontSize="14" 
+                 Items="{Binding Source={StaticResource Users}}">
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <UniformGrid Columns="3"/>
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderBrush="#69516B" BorderThickness="1" Margin="5" Padding="5">
+                        <StackPanel>
+                            <TextBlock Text="{Binding IdUser}" FontWeight="Bold" FontSize="16"/>
+                            <TextBlock Text="{Binding Login}" FontWeight="Bold" FontSize="14"/>
+                            <TextBlock Text="{Binding Email}" FontSize="12" FontStyle="Italic"/>
+                            <TextBlock Text="{Binding Password}" TextWrapping="Wrap" FontSize="12"/>
+                            <Button x:Name="DeleteUser" Content="Delete User" Click="DeliteUser_OnClick"
+                                    CommandParameter="{Binding}"/> 
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Grid Grid.RowSpan="4" Grid.Column="2" Background="#A09198">
+            <UniformGrid Columns="1">
+                <Button x:Name="ViewBook" Click="ViewBook_OnClick" HorizontalAlignment="Stretch" Content="View book" FontSize="16"
+                        VerticalAlignment="Center" HorizontalContentAlignment="Center" Foreground="#69516B"/>
+                <Button x:Name="ViewUser" Click="ViewUser_OnClick" HorizontalAlignment="Stretch" Content="View users" FontSize="16"
+                        VerticalAlignment="Center" HorizontalContentAlignment="Center" Foreground="#69516B"/>
+                <Button x:Name="Exit" Click="Exit_OnClick" HorizontalAlignment="Stretch" Content="Exit profile" FontSize="16"
+                        VerticalAlignment="Center" HorizontalContentAlignment="Center" Foreground="#69516B"/>
+            </UniformGrid>
+        </Grid>
+    </Grid>
+</UserControl>

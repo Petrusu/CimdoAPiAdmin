@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AvaloniaProject">
+    <option name="projectPerEditor">
+      <map>
+        <entry key="CimdoAdmin/Window_or_Page/AddAuthorPage.axaml" value="CimdoAdmin/CimdoAdmin.csproj" />
+        <entry key="CimdoAdmin/Window_or_Page/AddBookPage.axaml" value="CimdoAdmin/CimdoAdmin.csproj" />
+        <entry key="CimdoAdmin/Window_or_Page/AddGenerToBookPage.axaml" value="CimdoAdmin/CimdoAdmin.csproj" />
+        <entry key="CimdoAdmin/Window_or_Page/AutorizationPage.axaml" value="CimdoAdmin/CimdoAdmin.csproj" />
+        <entry key="CimdoAdmin/Window_or_Page/BooksPage.axaml" value="CimdoAdmin/CimdoAdmin.csproj" />
+        <entry key="CimdoAdmin/Window_or_Page/DeliteUserPage.axaml" value="CimdoAdmin/CimdoAdmin.csproj" />
+        <entry key="CimdoAdmin/Window_or_Page/MainPage.axaml" value="CimdoAdmin/CimdoAdmin.csproj" />
+      </map>
+    </option>
+  </component>
+</project>

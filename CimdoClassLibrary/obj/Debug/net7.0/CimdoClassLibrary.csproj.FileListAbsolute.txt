@@ -1,0 +1,12 @@
+/home/sofya/Рабочий стол/курсач/Cimdo2.0/CimdoClassLibrary/bin/Debug/net7.0/CimdoClassLibrary.deps.json
+/home/sofya/Рабочий стол/курсач/Cimdo2.0/CimdoClassLibrary/bin/Debug/net7.0/CimdoClassLibrary.dll
+/home/sofya/Рабочий стол/курсач/Cimdo2.0/CimdoClassLibrary/bin/Debug/net7.0/CimdoClassLibrary.pdb
+/home/sofya/Рабочий стол/курсач/Cimdo2.0/CimdoClassLibrary/obj/Debug/net7.0/CimdoClassLibrary.csproj.AssemblyReference.cache
+/home/sofya/Рабочий стол/курсач/Cimdo2.0/CimdoClassLibrary/obj/Debug/net7.0/CimdoClassLibrary.GeneratedMSBuildEditorConfig.editorconfig
+/home/sofya/Рабочий стол/курсач/Cimdo2.0/CimdoClassLibrary/obj/Debug/net7.0/CimdoClassLibrary.AssemblyInfoInputs.cache
+/home/sofya/Рабочий стол/курсач/Cimdo2.0/CimdoClassLibrary/obj/Debug/net7.0/CimdoClassLibrary.AssemblyInfo.cs
+/home/sofya/Рабочий стол/курсач/Cimdo2.0/CimdoClassLibrary/obj/Debug/net7.0/CimdoClassLibrary.csproj.CoreCompileInputs.cache
+/home/sofya/Рабочий стол/курсач/Cimdo2.0/CimdoClassLibrary/obj/Debug/net7.0/CimdoClassLibrary.dll
+/home/sofya/Рабочий стол/курсач/Cimdo2.0/CimdoClassLibrary/obj/Debug/net7.0/refint/CimdoClassLibrary.dll
+/home/sofya/Рабочий стол/курсач/Cimdo2.0/CimdoClassLibrary/obj/Debug/net7.0/CimdoClassLibrary.pdb
+/home/sofya/Рабочий стол/курсач/Cimdo2.0/CimdoClassLibrary/obj/Debug/net7.0/ref/CimdoClassLibrary.dll

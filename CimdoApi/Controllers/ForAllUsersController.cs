@@ -85,6 +85,7 @@ public class ForAllUsersController : ControllerBase
             .Include(f => f.IdBookNavigation) // Предзагрузка связанной сущности Book
             .Select(f => new
             {
+                IdBook = f.IdBookNavigation.IdBook,
                 Title = f.IdBookNavigation.Title,
                 Author = f.IdBookNavigation.AuthorNavigation.Author1
             })

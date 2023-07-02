@@ -41,6 +41,22 @@ public class ForAllUsersController : ControllerBase
         var booksData = GetBooks(); //вывод данных в api
         return Ok(booksData);
     }
+    private static IEnumerable<Author> GetAuthors() //подключение к базе данных
+    {
+        using (var context = new SbcpksmyContext())
+        {
+            return context.Authors
+                .ToList();
+        }
+    }
+    //запрос на вывод всех авторов
+    [HttpGet("getauthors")]
+    [Authorize]
+    public ActionResult GetDataAuthors()
+    {
+        var authorsData = GetAuthors(); //вывод данных в api
+        return Ok(authorsData);
+    }
     //создние списка жанров
     private static IEnumerable<Gener> GetGeners() //подключение к базе данных
     {
@@ -51,7 +67,6 @@ public class ForAllUsersController : ControllerBase
     }
     //вывод жанров
     [HttpGet("getgeners")]
-    [Authorize]
     public ActionResult GetData()
     {
         var genersData = GetGeners(); //вывод данных в api
@@ -60,27 +75,31 @@ public class ForAllUsersController : ControllerBase
     //запрос на информацию о конкретной книге
     [HttpGet("getinformationaboutbook")]
     [Authorize]
-    public async Task<ActionResult<ModelBookForFavarite>> GetInformationAboutBook(int bookId)
+    public async Task<ActionResult<ModelBookInformation>> GetInformationAboutBook(int bookId)
     {
         int userId = GetUserIdFromToken(); //из токена получаем id пользователя
         
         //запрос к бд для нахождения книги соотвествующей введенному id
-        var favoriteBook = await _context.Favorites
+        var favoriteBook = await _context.BooksGeners
             .Include(f => f.IdBookNavigation)
             .ThenInclude(book => book.AuthorNavigation)
-            .FirstOrDefaultAsync(f => f.IdUser == userId && f.IdBook == bookId);
+            .Include(f => f.IdBookNavigation)
+            .ThenInclude(book => book.BooksGeners)
+            .ThenInclude(bg => bg.IdGenerNavigation)
+            .FirstOrDefaultAsync(f => f.IdBook == bookId);
 
         if (favoriteBook == null)
         {
             return NotFound("Book not found"); // если книга не найдена в избранном пользователя, возвращаем 404 Not Found
         }
 
-        // Создаем объект ModelBookForFavarite и заполняем его данными из favoriteBook.IdBookNavigation и favoriteBook.IdBookNavigation.Author
-        var bookInformation = new ModelBookForFavarite
+        // Создаем объект ModelBookInformation и заполняем его данными из favoriteBook.IdBookNavigation и favoriteBook.IdBookNavigation.Author
+        var bookInformation = new ModelBookInformation
         {
             IdBook = favoriteBook.IdBookNavigation.IdBook,
             Title = favoriteBook.IdBookNavigation.Title,
-            Author = favoriteBook.IdBookNavigation.AuthorNavigation.Author1, 
+            Author = favoriteBook.IdBookNavigation.AuthorNavigation.Author1,
+            Geners = favoriteBook.IdBookNavigation.BooksGeners.Select(bg => bg.IdGenerNavigation.Gener1).ToArray(),
             Description = favoriteBook.IdBookNavigation.Description
         };
 

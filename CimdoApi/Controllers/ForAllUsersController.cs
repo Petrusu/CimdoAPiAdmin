@@ -7,6 +7,7 @@ using Cimdo2._0.Models;
 using CimdoApi.InnerClasses;
 using CimdoClassLibrary;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -67,10 +68,29 @@ public class ForAllUsersController : ControllerBase
     }
     //вывод жанров
     [HttpGet("getgeners")]
+    [Authorize]
     public ActionResult GetData()
     {
         var genersData = GetGeners(); //вывод данных в api
         return Ok(genersData);
+    }
+  
+    [HttpGet("Favorite")]
+    [Authorize]
+    public OkObjectResult GetFavoriteBooksByUserId()
+    {
+        int userId = GetUserIdFromToken();
+        var favoriteBooks = _context.Favorites
+            .Where(f => f.IdUser == userId) // Фильтрация по IdUser
+            .Include(f => f.IdBookNavigation) // Предзагрузка связанной сущности Book
+            .Select(f => new
+            {
+                Title = f.IdBookNavigation.Title,
+                Author = f.IdBookNavigation.AuthorNavigation.Author1
+            })
+            .ToList();
+
+        return Ok(favoriteBooks);
     }
     //запрос на информацию о конкретной книге
     [HttpGet("getinformationaboutbook")]
